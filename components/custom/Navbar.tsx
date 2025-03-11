@@ -1,27 +1,27 @@
 "use client";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { auth } from "@/lib/firebase";
-import { useEffect, useState } from "react";
+// import { useState } from "react";
 
 export function Navbar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setIsLoggedIn(!!user);
-    });
+  // useEffect(() => {
+  //   // const unsubscribe = auth.onAuthStateChanged((user) => {
+  //   //   setIsLoggedIn(!!user);
+  //   // });
 
-    return () => unsubscribe();
-  }, []);
+  //   // return () => unsubscribe();
+  //   const accessToken=getAcc
+  // }, []);
 
   const navItems = [
     { name: "Home", url: "/", icon: "/icons/home.svg" },
     { name: "Causes", url: "/causes", icon: "/icons/logo.svg" },
     {
       name: "Account",
-      url: isLoggedIn ? "/profile" : "/login",
+      url: "profile",
       icon: "/icons/profile.svg",
     },
     // {
