@@ -1,7 +1,5 @@
 "use client";
 import CustomLoader from "@/components/custom/CustomLoader";
-import Hero from "./components/Hero";
-import Hero2 from "./components/Hero2";
 import { LatestCauses } from "./components/LatestCouses";
 import { useMostDonatedCausesQuery } from "@/services/query/causeQuery";
 

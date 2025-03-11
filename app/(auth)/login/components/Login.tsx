@@ -39,6 +39,7 @@ const Login = () => {
   const onSubmit = async (data: loginType) => {
     console.log(data);
     await login(data);
+    router.push("/");
   };
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

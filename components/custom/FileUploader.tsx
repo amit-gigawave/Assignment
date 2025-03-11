@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Upload, File, Trash2, ImageIcon, Video } from "lucide-react";
+import { Upload, File, Trash2, ImageIcon, Video } from "lucide-react";
 import React, { useState, useCallback, useRef, type JSX } from "react";
 import { toast } from "sonner";
 
@@ -88,13 +88,13 @@ const fileTypeDetails: Record<
   },
 };
 
-const formatFileSize = (bytes: number) => {
-  if (bytes === 0) return "0 Bytes";
-  const k = 1024;
-  const sizes = ["Bytes", "KB", "MB"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`;
-};
+// const formatFileSize = (bytes: number) => {
+//   if (bytes === 0) return "0 Bytes";
+//   const k = 1024;
+//   const sizes = ["Bytes", "KB", "MB"];
+//   const i = Math.floor(Math.log(bytes) / Math.log(k));
+//   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`;
+// };
 
 export default function FileUpload({
   maxSizeInMB = 5,
@@ -133,6 +133,7 @@ export default function FileUpload({
         }))
       : []),
   ]);
+  console.log(progress);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const uploadTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -262,16 +263,16 @@ export default function FileUpload({
     [uploadedFiles, onDelete]
   );
 
-  const handleCancel = useCallback(() => {
-    if (uploadTimeout.current) {
-      clearTimeout(uploadTimeout.current);
-    }
-    setCurrentUpload(null);
-    setProgress(0);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  }, []);
+  // const handleCancel = useCallback(() => {
+  //   if (uploadTimeout.current) {
+  //     clearTimeout(uploadTimeout.current);
+  //   }
+  //   setCurrentUpload(null);
+  //   setProgress(0);
+  //   if (fileInputRef.current) {
+  //     fileInputRef.current.value = "";
+  //   }
+  // }, []);
 
   const renderUploadArea = () => (
     <div className="text-center">

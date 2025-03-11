@@ -21,8 +21,6 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import CustomDrawer from "@/components/custom/CustomDrawer";
 import CustomDialog from "@/components/custom/CustomDialog";
 import { formatCurrency } from "@/lib/utils";
-import { signInWithGoogle } from "@/services/api/auth";
-import Image from "next/image";
 import { auth } from "@/lib/firebase";
 import { CustomSelect } from "@/components/custom/CustomSelect";
 import { PaymentMethods } from "@/constants/enums";

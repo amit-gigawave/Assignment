@@ -20,10 +20,8 @@ import {
   IndianRupee,
 } from "lucide-react";
 import { DonationResponceType } from "@/models/schema";
-import PdfPreview from "./components/PdfPreview";
 import { CustomButton } from "@/components/custom/CustomButtons";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import ImageCarousel from "./components/ImageCarousel";
 
 export const runtime = "edge";
 
